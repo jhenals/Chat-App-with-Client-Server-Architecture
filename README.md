@@ -1,4 +1,4 @@
-# Chat-App-with-Client-Server-Architecture
+# Chat-Application-with-Client-Server-Architecture
 This is a simple chat application implemented in Java that demonstrates the basics of client-server communication using sockets. It features a graphical user interface (GUI) built with Swing and enables real-time text-based communication between a server and a client.
 
 ## Features
