@@ -19,12 +19,12 @@ This is a simple chat application implemented in Java that demonstrates the basi
 
 ## Technologies Used
 * Java (Core libraries for networking(java.net) and multithreading
-* Swing (Used to build the graphicall user interface for the chat windows)
+* Swing (Used to build the graphical user interface for the chat windows)
 
 ## Usage
 1. Run the ```ChatNode``` class to start the server.
 2. Select a host to initiate a chat as a client.
-    PS: You can add new hosts per line inside the ```hosts.txt``` file without modifying the source code.
+    PS: You can add new hosts per line inside the ```hosts.txt``` file.
 3. Exchange messages between the client and server in real-time.
 
 
