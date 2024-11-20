@@ -51,7 +51,7 @@ public class ChatWindow extends JFrame {
             chatArea.append(socket + ": " + message + "\n");
           }
         } catch (IOException e) {
-          chatArea.append("Connessione closed.\n");
+          chatArea.append("Connection closed.\n");
         }
       }).start();
 
