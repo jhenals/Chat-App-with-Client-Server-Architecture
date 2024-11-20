@@ -21,7 +21,7 @@ public class ChatNode {
     try {
       hostList = Files.readAllLines(Paths.get(ChatNode.class.getResource("hosts.txt").toURI())); //files inside src directory are typically trated as resources in Java -> use the resource loading mechanism instead of a direct file path.
     } catch (IOException | URISyntaxException e) {
-      System.err.println("Errore nel caricamento degli host. Assicurati che il file hosts.txt esista.");
+      System.err.println("Error loading hosts. Make sure the file hosts.txt exists.");
       hostList = Arrays.asList("localhost");
     }
   }
@@ -35,7 +35,7 @@ public class ChatNode {
     while (true) {
       String selectedHost = (String) JOptionPane.showInputDialog(
           null,
-          "Selezione un host per la chat:",
+          "Select host:",
           "Client",
           JOptionPane.QUESTION_MESSAGE,
           null,
@@ -61,8 +61,8 @@ public class ChatNode {
     int centerY = (int) (screenHeight * 0.3);
     try {
       Socket s = new Socket(selectedHost, PORT);
-      System.out.println("Connesso a " + selectedHost);
-      new ChatWindow("Chat con " + selectedHost, s, frame1x, centerY);
+      System.out.println("Connected to" + selectedHost);
+      new ChatWindow("Chat with " + selectedHost, s, frame1x, centerY);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -76,11 +76,11 @@ public class ChatNode {
     int centerY = (int) (screenHeight * 0.3);
     try {
       ServerSocket ss = new ServerSocket(PORT);
-      System.out.println("Server attivo sulla porta " + PORT);
+      System.out.println("Serve is active in port " + PORT);
 
       Socket client = ss.accept();
-      System.out.println("Connessione ricevuta da " + client.getInetAddress());
-      new ChatWindow("Chat con" + client.getInetAddress(), client, frame2x, centerY);
+      System.out.println("Connection received from " + client.getInetAddress());
+      new ChatWindow("Chat with " + client.getInetAddress(), client, frame2x, centerY);
 
     } catch (IOException e) {
       e.printStackTrace();

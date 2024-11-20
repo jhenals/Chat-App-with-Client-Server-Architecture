@@ -23,7 +23,7 @@ public class ChatWindow extends JFrame {
     JScrollPane scrollPane = new JScrollPane(chatArea);
 
     inputField = new JTextField(40);
-    JButton sendButton = new JButton("Invia");
+    JButton sendButton = new JButton("Send");
 
     JPanel panel = new JPanel();
     panel.add(inputField);
@@ -48,10 +48,10 @@ public class ChatWindow extends JFrame {
         try {
           String message;
           while ((message = in.readLine()) != null) {
-            chatArea.append("Loro: " + message + "\n");
+            chatArea.append(socket + ": " + message + "\n");
           }
         } catch (IOException e) {
-          chatArea.append("Connessione chiusa.\n");
+          chatArea.append("Connessione closed.\n");
         }
       }).start();
 
@@ -67,7 +67,7 @@ public class ChatWindow extends JFrame {
   private void sendMessage() {
     String message = inputField.getText();
     if (!message.isEmpty()) {
-      chatArea.append("Tu: " + message + "\n");
+      chatArea.append("Me: " + message + "\n");
       out.println(message);
       inputField.setText("");
     }
