@@ -1,4 +1,4 @@
-package esercizio2_2_chat;
+package chat;
 
 import javax.swing.*;
 import java.awt.*;

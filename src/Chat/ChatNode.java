@@ -1,4 +1,4 @@
-package esercizio2_2_chat;
+package chat;
 
 import javax.swing.*;
 import java.awt.*;
@@ -49,7 +49,7 @@ public class ChatNode {
     try {
       Socket s = new Socket(selectedHost, PORT);
       System.out.println("Connesso a " + selectedHost);
-      new esercizio2_2_chat.ChatWindow("Chat con " + selectedHost, s, frame1x, centerY);
+      new ChatWindow("Chat con " + selectedHost, s, frame1x, centerY);
     } catch (IOException e) {
       e.printStackTrace();
     }
@@ -67,7 +67,7 @@ public class ChatNode {
 
       Socket client = ss.accept();
       System.out.println("Connessione ricevuta da " + client.getInetAddress());
-      new esercizio2_2_chat.ChatWindow("Chat con" + client.getInetAddress(), client, frame2x, centerY);
+      new ChatWindow("Chat con" + client.getInetAddress(), client, frame2x, centerY);
 
     } catch (IOException e) {
       e.printStackTrace();
